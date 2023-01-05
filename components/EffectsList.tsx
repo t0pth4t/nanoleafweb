@@ -11,7 +11,9 @@ export default function EffectsList() {
                 setEffects(effects);
             }catch (e) {
                 console.error(e);
-                alert(`Failed to get effects: ${e.message}`);
+                if(e instanceof Error) {
+                    alert(`Failed to get effects: ${e.message}`);
+                }
             }
         }
         if(localStorage.getItem('auth_token')) {

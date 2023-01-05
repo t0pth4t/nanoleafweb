@@ -20,7 +20,9 @@ export default function Token(){
             }
         }catch (e) {
             console.error(e);
-            alert(`Failed to get token: ${e.message}`);
+            if(e instanceof Error) {
+                alert(`Failed to get token: ${e.message}`);
+            }
         }
     }
 
